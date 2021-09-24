@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-message AuthResquest {
+message AuthRequest {
     string token = 1;
 }
 

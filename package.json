@@ -1,7 +1,10 @@
 {
   "name": "digi-dungeon-protobuf",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Digi-Dungeon-API protocol buffers",
+  "scripts": {
+    "prepublish": "npm pack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/spooky-nebula/digi-dungeon-protobuf.git"
