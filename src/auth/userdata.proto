@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+message AuthResquest {
+    string token = 1;
+}
+
+message AuthResponse {
+    bool success = 1;
+    optional string token = 2;
+    optional string message = 3;
+}
+
+message UserRegisterData {
+    string username = 1;
+    string password = 2;
+}
+
+message UserLoginData {
+    string username = 1;
+    string password = 2;
+}
+
+message UserLogoutData {
+    string username = 1;
+    string token = 2;
+}

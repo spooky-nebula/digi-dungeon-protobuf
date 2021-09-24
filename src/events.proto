@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+import "util/dice.proto";
+import "util/structs.proto";
+
+message Event {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    extensions 4 to 50;
+}
+
+
+extend DiceRollRequestEvent {
+    RollRequestData roll = 4;
+}
+
+extend DiceRollEvent {
+    RollData roll = 4;
+}
+
+extend ChatMessageEvent {
+    string text = 4;
+}
+
+extend EntityMoveEvent {
+    int32 entity = 4;
+    Vector2 position = 5;
+}
+
+extend EntityCreateEvent {
+    int32 entity = 4;
+    string newEntityData = 5;
+}
+
+extend EntityModifyEvent {
+    int32 entity = 4;
+    string newEntityData = 5;
+}
+
+extend EntityRemoveEvent {
+    int32 entity = 4;
+}
+
+extend EntityGrantPermissionEvent {
+    int32 entity = 4;
+    string newEntityData = 5;
+    string permission = 6;
+}
+
+extend GrantPermissionEvent {
+    int32 entity = 4;
+    string permission = 5;
+}

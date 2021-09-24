@@ -1,0 +1,18 @@
+{
+  "name": "digi-dungeon-protobuf",
+  "version": "0.1.0",
+  "description": "Digi-Dungeon-API protocol buffers",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spooky-nebula/digi-dungeon-protobuf.git"
+  },
+  "keywords": [
+    "protobuff"
+  ],
+  "author": "Pedro Pires",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/spooky-nebula/digi-dungeon-protobuf/issues"
+  },
+  "homepage": "https://github.com/spooky-nebula/digi-dungeon-protobuf#readme"
+}
