@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-import "../shard.proto";
+import "shard.proto";
 
 message HandshakeData {
     string token = 1;
@@ -8,5 +8,5 @@ message HandshakeData {
 }
 
 message HandshakeResponseData {
-    dd.Shard.SimpleShard shardData = 1;
+    dd.shard.SimpleShard shardData = 1;
 }

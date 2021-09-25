@@ -1,6 +1,6 @@
 {
   "name": "digi-dungeon-protobuf",
-  "version": "0.1.2",
+  "version": "0.1.4",
   "description": "Digi Dungeon API protocol buffers",
   "scripts": {
     "prepublish": "npm pack",
