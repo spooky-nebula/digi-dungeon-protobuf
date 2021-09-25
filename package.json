@@ -1,9 +1,10 @@
 {
   "name": "digi-dungeon-protobuf",
-  "version": "0.1.1",
-  "description": "Digi-Dungeon-API protocol buffers",
+  "version": "0.1.2",
+  "description": "Digi Dungeon API protocol buffers",
   "scripts": {
-    "prepublish": "npm pack"
+    "prepublish": "npm pack",
+    "compile": "protoc -I=./src --js_out=import_style=commonjs,binary:dist ./src/index.proto"
   },
   "repository": {
     "type": "git",
