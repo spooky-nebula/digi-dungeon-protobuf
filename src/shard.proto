@@ -12,3 +12,10 @@ message Shard {
     dd.map.Board map = 3;
     repeated dd.event.Event gamelog = 4;
 }
+
+message SimpleShard {
+    string id = 1;
+    repeated dd.party.PartyMember partyList = 2;
+    dd.map.Board map = 3;
+    repeated dd.event.Event gamelog = 4;
+}

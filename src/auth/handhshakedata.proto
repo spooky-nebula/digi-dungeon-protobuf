@@ -1,10 +1,12 @@
 syntax = "proto3";
 
+import "../shard.proto";
+
 message HandshakeData {
     string token = 1;
     string shardID = 2;
 }
 
 message HandshakeResponseData {
-    
+    dd.Shard.SimpleShard shardData = 1;
 }
