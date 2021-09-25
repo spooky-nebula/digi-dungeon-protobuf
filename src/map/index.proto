@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package dd.map;
+
+import "util/index.proto";
+
+message ObjectEntity {
+    uint32 id = 1;
+    string cloudModelLink = 2;
+    string cloudTextureLink = 3;
+    dd.util.Vector3 position = 4;
+    dd.util.Vector3 scale = 5;
+    dd.util.Vector3 rotation = 6;
+    bool castShadows = 7;
+    bool receiveShadows = 8;
+}
+
+message Hex {
+    dd.util.Vector2 postion = 1;
+    sint32 height = 2;
+    optional int32 movecost = 3;
+}
+
+message HexGrid {
+    repeated Hex hex = 1;
+}
+
+message Board {
+    HexGrid grid = 1;
+    uint32 entityList = 2;
+    ObjectEntity objectList = 3;
+}
+

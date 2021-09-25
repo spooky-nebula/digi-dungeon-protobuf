@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package dd.util;
+
+// DICE ROLLING
+
+message RollRequestData {
+    uint32 dieQuantity = 1;
+    sint32 modifier = 2;
+    uint32 dieType = 3;
+}
+
+message RollData {
+    uint32 dieQuantity = 1;
+    sint32 modifier = 2;
+    uint32 dieType = 3;
+    repeated int32 rolls = 4;
+    int64 result = 5;
+}
+
+// STRUCTS
+
+message Vector2 {
+    sint32 x = 1;
+    sint32 y = 2;
+}
+
+message Vector3 {
+    sint32 x = 1;
+    sint32 y = 2;
+    sint32 z = 3;
+}

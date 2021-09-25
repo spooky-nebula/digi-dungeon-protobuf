@@ -1,0 +1,80 @@
+syntax = "proto3";
+
+package dd.event;
+
+import "util/index.proto";
+
+message Event {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+}
+
+message DiceRollRequestEvent{
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    dd.util.RollRequestData roll = 4;
+}
+
+message DiceRollEvent {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    dd.util.RollData roll = 4;
+}
+
+message ChatMessageEvent {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    string text = 4;
+}
+
+message EntityMoveEvent {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    int32 entity = 4;
+    dd.util.Vector2 position = 5;
+}
+
+message EntityCreateEvent {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    int32 entity = 4;
+    string newEntityData = 5;
+}
+
+message EntityModifyEvent {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    int32 entity = 4;
+    string newEntityData = 5;
+}
+
+message EntityRemoveEvent {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    int32 entity = 4;
+}
+
+message EntityGrantPermissionEvent {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    int32 entity = 4;
+    string newEntityData = 5;
+    string permission = 6;
+}
+
+message GrantPermissionEvent {
+    string name = 1;
+    string string = 2;
+    int64 timestamp = 3;
+    int32 entity = 4;
+    string permission = 5;
+}

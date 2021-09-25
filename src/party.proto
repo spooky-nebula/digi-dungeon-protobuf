@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package dd.party;
+
+message PartyMember {
+    string playerID = 1;
+    string userID = 2;
+    string permissions = 3;
+}

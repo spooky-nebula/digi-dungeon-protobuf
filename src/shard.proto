@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dd.shard;
+
+import "party.proto";
+import "map/index.proto";
+import "event.proto";
+
+message Shard {
+    string id = 1;
+    repeated dd.party.PartyMember partyList = 2;
+    dd.map.Board map = 3;
+    repeated dd.event.Event gamelog = 4;
+}

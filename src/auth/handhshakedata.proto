@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+message HandshakeData {
+    string token = 1;
+    string shardID = 2;
+}
+
+message HandshakeResponseData {
+    
+}
