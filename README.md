@@ -41,11 +41,11 @@ then be accessed with the following table:
 | Message Name | Digi-Dungeon API reference | Notes             |
 | ------------ | -------------------------- | ----------------- |
 | `dd.shard`   | `ddapi.Shard`              |
-| `dd.map`     | `'ddapi.Map`               |
-| `dd.auth`    | `'ddapi.Auth`              |
-| `dd.event`   | `'ddapi.Event`             |
-| `dd.util`    | `'ddapi.Util`              |
-| `dd.sheet`   | `'ddapi.Sheet`             | _@notImplemented_ |
+| `dd.map`     | `ddapi.Map`                |
+| `dd.auth`    | `ddapi.Auth`               |
+| `dd.event`   | `ddapi.Event`              |
+| `dd.util`    | `ddapi.Util`               |
+| `dd.sheet`   | `ddapi.Sheet`              | _@notImplemented_ |
 
 Then whatever data structure you want to encode in has the same name as the API
 reference.
