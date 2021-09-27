@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package dd.auth;
+
 message AuthRequest {
     string token = 1;
 }
@@ -21,6 +23,6 @@ message UserLoginData {
 }
 
 message UserLogoutData {
-    string username = 1;
+    reserved 1;
     string token = 2;
 }

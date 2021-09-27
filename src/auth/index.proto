@@ -1,5 +1,5 @@
 syntax = "proto3";
 
 package dd.auth;
-import "auth/userdata.proto";
-import "auth/handshakedata.proto";
+import "userdata.proto";
+import "handshakedata.proto";

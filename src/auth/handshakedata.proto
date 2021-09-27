@@ -1,6 +1,8 @@
 syntax = "proto3";
 
-import "shard.proto";
+package dd.auth;
+
+import "../shard.proto";
 
 message HandshakeData {
     string token = 1;

@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package dd.map;
 
-import "util/index.proto";
+import "../util/index.proto";
 
 message ObjectEntity {
     uint32 id = 1;

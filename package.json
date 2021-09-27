@@ -1,10 +1,13 @@
 {
   "name": "digi-dungeon-protobuf",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "Digi Dungeon API protocol buffers",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
-    "prepublish": "npm pack",
-    "compile": "protoc -I=./src --js_out=import_style=commonjs,binary:dist ./src/index.proto"
+    "prepublish": "tsc --build --clean | tsc --project tsconfig.build.json | copyfiles -u 1 src/*.proto src/**/*.proto dist | npm pack",
+    "build": "tsc --build --clean | tsc | copyfiles -u 1 src/*.proto src/**/*.proto dist-dev",
+    "test": "npm build | node ./dist-dev/index.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +21,13 @@
   "bugs": {
     "url": "https://github.com/spooky-nebula/digi-dungeon-protobuf/issues"
   },
-  "homepage": "https://github.com/spooky-nebula/digi-dungeon-protobuf#readme"
+  "homepage": "https://github.com/spooky-nebula/digi-dungeon-protobuf#readme",
+  "devDependencies": {
+    "@types/node": "^16.10.1",
+    "copyfiles": "^2.4.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "protobufjs": "^6.11.2"
+  }
 }
