@@ -2,14 +2,25 @@ syntax = "proto3";
 
 package dd.auth;
 
+import "shard.proto";
+
+message HandshakeData {
+    string token = 1;
+    string shardID = 2;
+}
+
+message HandshakeResponseData {
+    SimpleShard shardData = 1;
+}
+
 message AuthRequest {
     string token = 1;
 }
 
 message AuthResponse {
     bool success = 1;
-    optional string token = 2;
-    optional string message = 3;
+    string token = 2;
+    string message = 3;
 }
 
 message UserRegisterData {

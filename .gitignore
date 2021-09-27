@@ -105,3 +105,4 @@ dist
 .protolint.yml
 dist-dev
 .tgz
+protoold/

@@ -4,7 +4,7 @@
     "module": "CommonJS",
     "allowJs": true,
     "declaration": true,
-    "outDir": "./dist-dev",
+    "outDir": "dist",
     "strict": true,
     "moduleResolution": "node",
     "baseUrl": "./",
@@ -17,6 +17,6 @@
       "*": ["node_modules/", "src/types/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.proto"],
+  "include": ["src/**/*", "index.d.ts"],
   "exclude": ["node_modules"]
 }
