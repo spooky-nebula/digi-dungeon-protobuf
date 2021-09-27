@@ -30,6 +30,10 @@ encodeResponse(lookupType: string, message: any) {
 }
 ```
 
+Instead you can also include the included utility `ProtoBufEncoder` class
+for a simple implementaton of `ProtoBufEncoder.encodeResponse` and
+`ProtoBufEncoder.decodeResponse` methods just like the above.
+
 The `lookupType` is a string and in this library it will be always start with
 the `dd` as its namespace package identifier. All the message structures can
 then be accessed with the following table:
@@ -37,11 +41,11 @@ then be accessed with the following table:
 | Message Name | Digi-Dungeon API reference | Notes             |
 | ------------ | -------------------------- | ----------------- |
 | `dd.shard`   | `ddapi.Shard`              |
-| `dd.map`     | `'ddapi.Map`               |
-| `dd.auth`    | `'ddapi.Auth`              |
-| `dd.event`   | `'ddapi.Event`             |
-| `dd.util`    | `'ddapi.Util`              |
-| `dd.sheet`   | `'ddapi.Sheet`             | _@notImplemented_ |
+| `dd.map`     | `ddapi.Map`                |
+| `dd.auth`    | `ddapi.Auth`               |
+| `dd.event`   | `ddapi.Event`              |
+| `dd.util`    | `ddapi.Util`               |
+| `dd.sheet`   | `ddapi.Sheet`              | _@notImplemented_ |
 
 Then whatever data structure you want to encode in has the same name as the API
 reference.
