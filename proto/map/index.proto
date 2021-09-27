@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package dd.map;
 
-import "../util/index.proto";
+import "util/index.proto";
 
 message ObjectEntity {
     uint32 id = 1;
@@ -18,7 +18,7 @@ message ObjectEntity {
 message Hex {
     dd.util.Vector2 postion = 1;
     sint32 height = 2;
-    optional int32 movecost = 3;
+    int32 movecost = 3;
 }
 
 message HexGrid {
