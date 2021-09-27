@@ -30,10 +30,6 @@ encodeResponse(lookupType: string, message: any) {
 }
 ```
 
-Instead you can also include the included utility `ProtoBufEncoder` class
-for a simple implementaton of `ProtoBufEncoder.encodeResponse` and
-`ProtoBufEncoder.decodeResponse` methods just like the above.
-
 The `lookupType` is a string and in this library it will be always start with
 the `dd` as its namespace package identifier. All the message structures can
 then be accessed with the following table:
