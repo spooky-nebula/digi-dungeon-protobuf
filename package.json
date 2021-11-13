@@ -6,8 +6,7 @@
   "types": "./dist/index.d.ts",
   "scripts": {
     "prepublish": "npm run build | npm pack",
-    "build": "tsc --build --clean | tsc",
-    "webpack": "webpack",
+    "build": "webpack",
     "test": "node ./dist/index.js",
     "compile_dont_use_this_one_please": "protoc -I=proto/ --ts_out=compile/ proto/index.proto"
   },
