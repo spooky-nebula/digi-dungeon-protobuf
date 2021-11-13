@@ -10,7 +10,7 @@ message HandshakeData {
 }
 
 message HandshakeResponseData {
-    SimpleShard shardData = 1;
+    dd.shard.SimpleShard shardData = 1;
 }
 
 message AuthRequest {

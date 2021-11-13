@@ -2,8 +2,7 @@ syntax = "proto3";
 
 package dd.event;
 
-import "util/index.proto";
-
+import "util.proto";
 message Event {
     string name = 1;
     string string = 2;

@@ -1,7 +1,6 @@
 syntax = "proto3";
 
 package dd.util;
-
 // DICE ROLLING
 
 message RollRequestData {

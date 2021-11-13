@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 package dd;
-import "map/index.proto";
-import "auth/index.proto";
+import "map.proto";
+import "auth.proto";
 import "event.proto";
 import "shard.proto";
 import "party.proto";
-import "util/index.proto";
+import "util.proto";
