@@ -48,21 +48,46 @@ reference.
 
 # How to (using the module)
 
-Using the table above you can also import all the the classes and objects
-needed to decode and encode your own messages. Import the library and create
-your payloads from the original objects then serialize them into buffers.
+Use the higly advanced `ProtoBufCringe` class included to lookup the message
+types without having to write that whole scpiel up there. Something along the
+lines of this:
 
 ```ts
-import * as ddproto from 'digi-dungeon-protobuf';
+// send it lol
+import ProtoBufCringe from 'digi-dungeon-protobuf';
 
-let authresponse = { success: false };
-let payload: ddproto.auth.AuthResponse = new ddproto.auth.AuthResponse(
-  authresponse
+let authloginrequest = { username: 'username', password: 'password' };
+ProtoBufCringe.encode_request(authloginrequest, 'dd.auth.UserLoginData').then(
+  (buffer) => {
+    // your code that sends this buffer to the server
+    // to be noted that the server like the data you send to look like this:
+    let data_to_send = { data: buffer };
+  }
 );
 
-let buffer: Uint8Array = payload.serialize();
+// recieve it also
+import ProtoBufCringe from 'digi-dungeon-protobuf';
+// You recieve the `buffer` from the server in a little buffer pouch
+let buffer = you_recieved_this_from_the_server;
+ProtoBufCringe.decode_request_typed<AuthResponse>(
+  buffer,
+  'dd.auth.AuthResponse'
+).then((response) => {
+  // response is the decoded object
+});
+```
 
-// send it lol
+If you are a javascript boy instead of Typescript you can use:
+
+```js
+import ProtoBufCringe from 'digi-dungeon-protobuf';
+// You recieve the `buffer` from the server in a little buffer pouch
+let buffer = you_recieved_this_from_the_server;
+ProtoBufCringe.decode_request(buffer, 'dd.auth.AuthResponse').then(
+  (response) => {
+    // response is the decoded object
+  }
+);
 ```
 
 # Extra crumbs in the cookie jar
