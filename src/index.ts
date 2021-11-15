@@ -1,5 +1,11 @@
 import * as protobuf from 'protobufjs';
 import * as proto from './proto/';
+
+type PackedSocketData = {
+  type: string;
+  body: Object | Buffer;
+};
+
 class ProtoBufCringe {
   static root: protobuf.Root | undefined;
 
@@ -82,6 +88,24 @@ class ProtoBufCringe {
         .catch(reject);
     });
   }
+
+  static unpackData<T>(data: PackedSocketData): Promise<T> {
+    return new Promise((resolve, reject) => {
+      if (Buffer.isBuffer(data.body)) {
+        let buffer = data.body;
+        ProtoBufCringe.decode_request_typed<T>(buffer, data.type)
+          .then((unpacked) => {
+            resolve(unpacked);
+          })
+          .catch((err) => {
+            // If the decode failed, it could be that the data is in JSON format
+            resolve(data.body as T);
+          });
+      } else {
+        resolve(data.body as T);
+      }
+    });
+  }
 }
 
 export default ProtoBufCringe;
@@ -101,10 +125,15 @@ if (typeof require !== 'undefined' && require.main === module) {
         if (
           original_data.username == depack.username &&
           original_data.password == depack.password
-        )
+        ) {
           console.log(
             'Test successful, should work 1% of codebase tested good luck.'
           );
+          process.exit(0);
+        } else {
+          console.log('Test unsuccessful, 1% of codebase tested good luck.');
+          process.exit(1);
+        }
       }
     );
   });
