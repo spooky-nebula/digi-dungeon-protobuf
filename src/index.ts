@@ -13,14 +13,6 @@ class ProtoBufCringe {
     return new Promise((resolve, reject) => {
       let root = ProtoBufCringe.root;
       if (root == undefined) {
-        //proto.sneaky_load().then((proto_contents) => {
-        //  console.log(proto_contents);
-        //
-        //  let root = protobuf.parse(proto_contents).root;
-        //  console.log(root);
-        //  ProtoBufCringe.root = root;
-        //  resolve(root);
-        //});
         protobuf
           .load(proto.index)
           .then((root) => {
@@ -109,7 +101,7 @@ class ProtoBufCringe {
 }
 
 export default ProtoBufCringe;
-export { ProtoBufCringe };
+export { ProtoBufCringe, PackedSocketData };
 
 if (typeof require !== 'undefined' && require.main === module) {
   type TypeData = { username: string; password: string };
