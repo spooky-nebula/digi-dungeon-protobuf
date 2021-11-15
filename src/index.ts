@@ -7,14 +7,6 @@ class ProtoBufCringe {
     return new Promise((resolve, reject) => {
       let root = ProtoBufCringe.root;
       if (root == undefined) {
-        //proto.sneaky_load().then((proto_contents) => {
-        //  console.log(proto_contents);
-        //
-        //  let root = protobuf.parse(proto_contents).root;
-        //  console.log(root);
-        //  ProtoBufCringe.root = root;
-        //  resolve(root);
-        //});
         protobuf
           .load(proto.index)
           .then((root) => {
@@ -86,26 +78,3 @@ class ProtoBufCringe {
 
 export default ProtoBufCringe;
 export { ProtoBufCringe };
-
-if (typeof require !== 'undefined' && require.main === module) {
-  type TypeData = { username: string; password: string };
-  let original_data: TypeData = { username: 'username', password: 'password' };
-  console.log('Original Data', original_data);
-  let message_type = 'dd.auth.UserLoginData';
-  ProtoBufCringe.encode_request(original_data, message_type).then((pack) => {
-    console.log('Encoded Data', pack);
-
-    ProtoBufCringe.decode_request_typed<TypeData>(pack, message_type).then(
-      (depack) => {
-        console.log('Decoded Data', depack);
-        if (
-          original_data.username == depack.username &&
-          original_data.password == depack.password
-        )
-          console.log(
-            'Test successful, should work 1% of codebase tested good luck.'
-          );
-      }
-    );
-  });
-}
