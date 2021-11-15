@@ -1,14 +1,13 @@
 {
   "name": "digi-dungeon-protobuf",
-  "version": "0.2.6",
+  "version": "0.2.10",
   "description": "Digi Dungeon API protocol buffers",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
     "prepublish": "npm run build | npm pack",
-    "build": "webpack --config webpack.prod.js",
-    "build_tests": "webpack --config webpack.dev.js",
-    "test": "node ./dist-dev/test/test.js",
+    "build": "webpack",
+    "test": "node ./dist/test.js",
     "compile_dont_use_this_one_please": "protoc -I=proto/ --ts_out=compile/ proto/index.proto"
   },
   "repository": {

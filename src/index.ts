@@ -1,11 +1,5 @@
 import * as protobuf from 'protobufjs';
 import * as proto from './proto/';
-
-type PackedSocketData = {
-  type: string;
-  body: Object | Buffer;
-};
-
 class ProtoBufCringe {
   static root: protobuf.Root | undefined;
 
@@ -80,25 +74,7 @@ class ProtoBufCringe {
         .catch(reject);
     });
   }
-
-  static unpackData<T>(data: PackedSocketData): Promise<T> {
-    return new Promise((resolve, reject) => {
-      if (Buffer.isBuffer(data.body)) {
-        let buffer = data.body;
-        ProtoBufCringe.decode_request_typed<T>(buffer, data.type)
-          .then((unpacked) => {
-            resolve(unpacked);
-          })
-          .catch((err) => {
-            // If the decode failed, it could be that the data is in JSON format
-            resolve(data.body as T);
-          });
-      } else {
-        resolve(data.body as T);
-      }
-    });
-  }
 }
 
 export default ProtoBufCringe;
-export { ProtoBufCringe, PackedSocketData };
+export { ProtoBufCringe };
