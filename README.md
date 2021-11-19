@@ -98,14 +98,6 @@ soon™️_
 _\*This Protocol Buffer library for Digi-Dungeon only supports hexgrids based on
 the axial coordinate system (`Vector2`)._
 
-# If you want to build this
+# Tests don't work by the way :)
 
-Don't please, I can't automate this for some reason, maybe I'm an idiot or
-something but if you really don't have anything better to do here's what I did:
-
-1. Used `protoc` with the typescript addon to compile the `.proto` files to
-   typescript.
-2. Fixed the imports in the generated `index.ts` so that they would export with
-   the right namespace names since it just generates everything as some
-   variation of `dependency_#`.
-3. Finally used the `npm run build` to run tsc.
+You can thank me not spending enough time on this
